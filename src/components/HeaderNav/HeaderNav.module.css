@@ -1,0 +1,54 @@
+.wrapper {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  font-weight: 700;
+  line-height: 1.25;
+  flex-direction: column-reverse;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+}
+
+.link {
+  font-weight: 400;
+  line-height: 1.25;
+  position: relative;
+}
+
+:global(.active)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--bg-color);
+}
+
+.auth {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.hidden {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media screen and (min-width: 1440px) {
+  .wrapper {
+    flex-direction: row;
+  }
+  .hidden {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+}
